@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Address from "./Component/Profile/Address";
+import FullName from "./Component/Profile/FullName";
+import ProfilePhoto from "./Component/Profile/ProfilePhoto";
+import React, { useState } from "react";
 function App() {
+  const [mode, setMode] = useState("dark");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{mode}</p>
+      <FullName appMode={mode} />
+      <Address />
+      <ProfilePhoto />
     </div>
   );
 }
